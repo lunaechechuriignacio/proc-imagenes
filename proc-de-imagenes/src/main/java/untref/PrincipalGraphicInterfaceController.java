@@ -6,6 +6,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import untref.interfacebuilders.ImageViewBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,16 +22,8 @@ public class PrincipalGraphicInterfaceController {
 
 		fileMenu.getItems().addAll(fileMenuItem);
 
-		ImageView imageView = new ImageView("default.jpg");
-		imageView.setPreserveRatio(true);
-		imageView.setFitWidth(500);
-		imageView.setFitHeight(500);
-		imageView.setVisible(true);
-		imageView.setX(50);
-		imageView.setY(150);
-		imageView.autosize();
-
-		
+		ImageView imageView = new ImageViewBuilder("default.jpg").withPreserveRatio(true).withFitWidth(500).withFitHeight(500).withVisible(true)
+				.withX(50).withY(150).withAutosize().build();
 
 		List<Node> childrens = new ArrayList<Node>();
 		childrens.add(menuBar);
