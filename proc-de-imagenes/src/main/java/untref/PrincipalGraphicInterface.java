@@ -1,8 +1,8 @@
-package untref;/**
- * Created by matias on 14/03/17.
- */
+package untref;
 
 import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class PrincipalGraphicInterface extends Application {
@@ -13,6 +13,13 @@ public class PrincipalGraphicInterface extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
+		AnchorPane principalPane = new AnchorPane();
+		Scene scene = new Scene(principalPane, 300, 300);
+		primaryStage.setScene(scene);
 
+		((AnchorPane) scene.getRoot()).getChildren().addAll(new PrincipalGraphicInterfaceController().initInterfaceElements());
+
+		primaryStage.setMaximized(true);
+		primaryStage.show();
 	}
 }
